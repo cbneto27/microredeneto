@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Criar HTML</title>
+    <script>
+        function criarHTML() {
+            var matricula = document.getElementById("matricula").value;
+            var loc = document.getElementById("loc").value;
+            var set = document.getElementById("set").value;
+            var qd = document.getElementById("qd").value;
+            var lt = document.getElementById("lt").value;
+            var sublt = document.getElementById("sublt").value;
+            var sslt = document.getElementById("sslt").value;
+            var seq = document.getElementById("seq").value;
+            var entrada = document.getElementById("entrada").value;
+            var saida = document.getElementById("saida").value;
+            
+            var conteudoHTML = `
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Dados do Formulário</title>
+                </head>
+                <body>
+                    <h1>Dados do Formulário:</h1>
+                    <p>Matrícula: ${matricula}</p>
+                    <p>Loc: ${loc}</p>
+                    <p>Set: ${set}</p>
+                    <p>Qd: ${qd}</p>
+                    <p>Lt: ${lt}</p>
+                    <p>Sublt: ${sublt}</p>
+                    <p>SSlt: ${sslt}</p>
+                    <p>Seq: ${seq}</p>
+                    <p>Entrada: ${entrada}</p>
+                    <p>Saída: ${saida}</p>
+                </body>
+                </html>
+            `;
+            
+            var link = document.createElement("a");
+            link.href = "data:text/html;charset=utf-8," + encodeURIComponent(conteudoHTML);
+            link.download = matricula + ".html"; // Nome do arquivo será o valor do campo matricula + ".html"
+            link.click();
+            
+            alert("Arquivo HTML criado com sucesso!");
+            
+            return false; // Impede o envio padrão do formulário
+        }
+    </script>
+</head>
+<body>
+    <h1>Criar HTML</h1>
+    <form onsubmit="return criarHTML()">
+        <label for="matricula">Matrícula:</label>
+        <input type="text" id="matricula" name="matricula" required>
+        <br>
+        
+        <label for="loc">Loc:</label>
+        <input type="text" id="loc" name="loc" required>
+        <br>
+        
+        <label for="set">Set:</label>
+        <input type="text" id="set" name="set" required>
+        <br>
+        
+        <label for="qd">Qd:</label>
+        <input type="text" id="qd" name="qd" required>
+        <br>
+        
+        <label for="lt">Lt:</label>
+        <input type="text" id="lt" name="lt" required>
+        <br>
+        
+        <label for="sublt">Sublt:</label>
+        <input type="text" id="sublt" name="sublt" required>
+        <br>
+        
+        <label for="sslt">SSlt:</label>
+        <input type="text" id="sslt" name="sslt" required>
+        <br>
+        
+        <label for="seq">Seq:</label>
+        <input type="text" id="seq" name="seq" required>
+        <br>
+        
+        <label for="entrada">Entrada:</label>
+        <input type="text" id="entrada" name="entrada" required>
+        <br>
+        
+        <label for="saida">Saída:</label>
+        <input type="text" id="saida" name="saida" required>
+        <br>
+        
+        <input type="submit" value="Criar HTML">
+    </form>
+</body>
+</html>
